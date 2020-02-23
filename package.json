@@ -74,6 +74,7 @@
     ],
     "moduleNameMapper": {
       "\\.(styl|css)$": "<rootDir>/src/__moocks__/styleMoock.js"
-    }
+    },
+    "verbose": true
   }
 }
