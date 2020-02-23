@@ -7,7 +7,9 @@
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,6 @@
   "author": "Oscar Barajas <oscar@arepa.dev>",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "babel-eslint": "^10.0.3",
@@ -45,7 +46,10 @@
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^4.3.0",
@@ -53,11 +57,23 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.14.3",
+    "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-render": "^1.1.2",
+    "react-test-renderer": "^16.12.0",
     "webpack-dev-server": "^3.9.0"
   },
   "bugs": {
     "url": "https://github.com/gndx/platzi-store/issues"
   },
-  "homepage": "https://github.com/gndx/platzi-store/#readme"
+  "homepage": "https://github.com/gndx/platzi-store/#readme",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(styl|css)$": "<rootDir>/src/__moocks__/styleMoock.js"
+    }
+  }
 }
