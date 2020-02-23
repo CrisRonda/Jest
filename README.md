@@ -1,4 +1,4 @@
-# Cusro de Jest con Platzi
+# Curso de Jest con Platzi
 
 Curso de Pruebas unitarias con Jest
 
